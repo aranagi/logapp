@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Picture:</b>
+  <%= image_tag(@illust.picture_url, width: 400) if @illust.picture.present? %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @illust.title %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @illust.genre %>
+</p>
+
+
+<%= link_to 'Edit', edit_illust_path(@illust) %> |
+<%= link_to 'Back', illusts_path %>

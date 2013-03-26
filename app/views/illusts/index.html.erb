@@ -1,0 +1,27 @@
+<h1>Listing illusts</h1>
+
+<table>
+  <tr>
+    <th>Picture</th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @illusts.each do |illust| %>
+  <tr>
+    <td><%= link_to image_tag(illust.picture, width:100), illust if illust.picture.present? %></td>
+    <td><%= illust.title %></td>
+    <td><%= illust.genre %></td>
+    <td><%= link_to 'Show', illust %></td>
+    <td><%= link_to 'Edit', edit_illust_path(illust) %></td>
+    <td><%= link_to 'Destroy', illust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Illust', new_illust_path %>
