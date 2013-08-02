@@ -1,26 +1,26 @@
 <h1>Listing illusts</h1>
 
-<table>
-  <tr>
-    <th>Picture</th>
-    <th>Title</th>
-    <th>Genre</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2>Genre:original</h2>
 
 <% @illusts.each do |illust| %>
-  <tr>
-    <td><%= link_to image_tag(illust.picture, width:100), illust if illust.picture.present? %></td>
-    <td><%= illust.title %></td>
-    <td><%= illust.genre %></td>
-    <td><%= link_to 'Show', illust %></td>
-    <td><%= link_to 'Edit', edit_illust_path(illust) %></td>
-    <td><%= link_to 'Destroy', illust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+  <% if illust.genre != "original" then next end %>
+  
+  <%= link_to image_tag(illust.picture, height:100), illust if illust.picture.present? %>
+
 <% end %>
-</table>
+
+<br />
+
+<h2>Genre:fanart</h2>
+
+<% @illusts.each do |illust| %>
+
+  <% if illust.genre != "fanart" then next end %>
+
+  <%= link_to image_tag(illust.picture, height:100), illust if illust.picture.present? %>
+
+<% end %>
 
 <br />
 

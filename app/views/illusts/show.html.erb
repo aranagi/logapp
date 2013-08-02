@@ -16,5 +16,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_illust_path(@illust) %> |
+<%= link_to 'Edit', edit_illust_path(@illust) %> | 
+<%= link_to 'Destroy', @illust, method: :delete, data: { confirm: 'Are you sure?' } %>  |
 <%= link_to 'Back', illusts_path %>
