@@ -5,13 +5,15 @@
   });
 </script>
 
+<h1>Log</h1>
+
 <h2>Genre:original</h2>
 
 <% @illusts.each do |illust| %>
 
   <% if illust.genre != "original" then next end %>
   
-  <%= link_to image_tag(illust.picture, height:100), illust if illust.picture.present? %>
+  <%= link_to image_tag(illust.picture, height:100), illust.picture.to_s, {:class=>"fancybox"} %>
 
 <% end %>
 
@@ -23,10 +25,10 @@
 
   <% if illust.genre != "fanart" then next end %>
 
-  <%= link_to image_tag(illust.picture, height:100), illust if illust.picture.present? %>
+  <%= link_to image_tag(illust.picture, height:100), illust.picture.to_s, {:class=>"fancybox"} %>
 
 <% end %>
 
 <br />
 
-<%= link_to 'New Illust', new_illust_path %>
+<%= link_to 'New', new_illust_path %>
