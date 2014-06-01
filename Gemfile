@@ -37,3 +37,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rmagick'
+gem 'fancybox2-rails', '~> 0.2.8'
